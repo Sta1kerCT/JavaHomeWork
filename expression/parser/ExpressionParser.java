@@ -55,8 +55,6 @@ public class ExpressionParser implements TripleParser {
             }
         }
     }
-
-	// :NOTE: если делать классический рекурсивный парсер, то будет, наверное, более наглядно - это тот случай, когда выносить общий код лучше не надо
     private TripleExpression setClear() {
         return binaryOperation(3);
     }
@@ -76,7 +74,6 @@ public class ExpressionParser implements TripleParser {
             }
             iterator++;
             char curChar = expression.charAt(iterator);
-			// :NOTE: конечно, понятно, откуда число 4, но лучше брать длину count - 1
             if (curChar == 'c' && expression.startsWith("count", iterator)) {
                 iterator += 4;
                 return new Count((PriorityExpression) unaryOperation());
@@ -101,7 +98,6 @@ public class ExpressionParser implements TripleParser {
             char curChar = expression.charAt(iterator);
             if (curChar == 'x' || curChar == 'y' || curChar == 'z') {
                 return new Variable(String.valueOf(curChar));
-            // :NOTE: снова between
 			} else if (('0' <= curChar && curChar <= '9') || curChar == '-') {
                 StringBuilder number = new StringBuilder();
                 do {
