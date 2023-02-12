@@ -42,6 +42,7 @@
 зачеркнутый текст окружается символами '~'. 
 ``` 
 Следующий код должен успешно компилироваться:
+
     ```
     Paragraph paragraph = new Paragraph(List.of(
         new Strong(List.of(
@@ -58,6 +59,7 @@
         ))
     ));
     ```
+    
 Вызов paragraph.toMarkdown(new StringBuilder()) должен заполнять переданный StringBuilder следующим содержимым:
 ```__1~2*34*5~6__```
 
