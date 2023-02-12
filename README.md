@@ -127,8 +127,9 @@
     .equals(new Multiply(new Const(2), new Variable("x")))
 ```            
 должно выдавать true, а
-new Multiply(new Const(2), new Variable("x"))
+```new Multiply(new Const(2), new Variable("x"))
     .equals(new Multiply(new Variable("x"), new Const(2)))
+```
 должно выдавать false.
 Для тестирования программы должен быть создан класс Main, который вычисляет значение выражения x2−2x+1, для x, заданного в командной строке.
 При выполнении задания следует обратить внимание на:
